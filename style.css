@@ -1,0 +1,227 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --ff-primary: 'Roboto', sans-serif;
+  --text-color: #E1E1E6;
+  
+  --hue: 194;
+  --bg-color: rgba(20, 15, 7, 0.997);
+  --fav-button: #065E7C;
+  --th-color: #092D38;
+  --odd-color: rgba(6, 22, 27, 0.5);
+  --even-input-color: #06181C;
+}
+
+body{
+  font-size: 2rem;
+
+  background-color: var(--bg-color);
+  color: var(--text-color)
+}
+
+body *{
+  font-family: var(--ff-primary);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+  }
+
+#app {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5rem 0; 
+}
+
+.search {
+  display: flex;
+  gap: .8rem;
+}
+
+.search input {
+  background-color: var(--even-input-color);
+  padding: 1.6rem;
+  border-radius: .5rem;
+  border: none;
+  width: 35rem;
+  font-size: 1.6rem;
+  color: #fff
+}
+.search button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 .8rem;
+  background: var(--fav-button);
+  border-radius: .5rem;
+  cursor: pointer;
+
+  text-transform: uppercase;
+
+  color: var(--text-color);
+  padding: 1.2rem 3.2rem;
+
+  transition: all 200ms;
+}
+
+.search button:hover{
+  transform: scale(1);
+  background-color: #2f7d979f;
+
+}
+table{
+ margin-top: 10rem;
+  border-radius: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 3rem 3rem 3rem -3.2rem rgba(130, 144, 150, 0.3);
+}
+
+table * {
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+table th{
+  background-color: var(--th-color);
+  height: 6.4rem;
+  text-align: left;
+  font-weight: bold;
+  padding: 1.6rem 9.2rem 1.6rem 4rem;
+
+}
+table th:first-child{
+  border-top-left-radius: .4rem;
+}
+table th:last-child{
+  border-top-right-radius: .4rem;
+}
+
+table tr:nth-child(odd){
+  background: var(--odd-color);
+}
+
+table tr:nth-child(even){
+  background: var(--even-input-color);
+}
+
+table thead tr th:first-child{
+  border-top-left-radius: 2rem;
+}
+table thead tr th:last-child {
+  border-top-right-radius: 2rem;
+}
+
+table td{
+  height: 9rem;
+  padding: 4rem;
+  text-align: left;
+  gap: 2rem;
+}
+
+tbody{
+  display: block;
+  max-height:55rem;
+  overflow-y:overlay;
+  overflow-x:hidden;
+}
+
+tbody::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: rgb(56, 55, 55);
+  border-radius: 1rem;
+}
+
+tbody::-webkit-scrollbar-track{
+  border: solid  4px transparent;
+}
+
+tbody::-webkit-scrollbar-thumb{
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+thead, tbody tr{
+  display: table;
+  width: 100%;
+  table-layout:fixed;
+}
+
+td.user{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+}
+td.user img{
+  width: 5rem;
+  height: 5rem;
+  
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a{
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
+} 
+
+button.remove{
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+@media (max-width: 800px){
+
+  #app header img{
+    width: 25%;
+    object-fit: cover;
+    padding: 1rem;
+  }
+
+  #app header input{
+    width: 40vw;   
+    font-size: 1.4rem;
+    margin-right: 2rem;
+  }
+
+  #app header button .fav{
+    width: 20%;
+    object-fit: cover;
+    padding: 1rem;
+  }
+
+  table{
+    margin-top: 2rem
+  }
+
+}
+
